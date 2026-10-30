@@ -1,4 +1,3 @@
-// These functions use the Supabase REST API directly. No server or login is needed.
 export function createTaskApi(config, request = fetch) {
   const url = new URL(config.supabaseUrl);
   if (url.protocol !== 'https:' || !/^[a-z0-9-]+\.supabase\.co$/.test(url.hostname) ||
@@ -35,7 +34,6 @@ export function createTaskApi(config, request = fetch) {
   }
 
   function byId(id) {
-    // Keep BIGINT IDs as strings to avoid changing large database IDs in JavaScript.
     if (!/^\d+$/.test(String(id))) throw new Error('Invalid task ID.');
     return `?id=eq.${id}`;
   }

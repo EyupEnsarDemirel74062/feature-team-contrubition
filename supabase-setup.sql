@@ -1,5 +1,3 @@
--- Run once in a NEW Supabase demonstration project containing test data only.
--- The assignment requires visitors to read and change tasks without logging in.
 begin;
 
 create table public.tasks (
