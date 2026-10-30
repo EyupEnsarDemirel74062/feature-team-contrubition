@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A simple Task Manager for the Vistula Team Project course.">
+  <title>Task Manager | Rana Karahan</title>
+  <link rel="stylesheet" href="style.css">
+  <script type="module" src="app.js"></script>
+</head>
+<body>
+  <main class="page">
+    <header class="page-header">
+      <div>
+        <p class="eyebrow">VISTULA · TEAM PROJECT</p>
+        <h1>Task Manager</h1>
+        <p class="subtitle">A little less to remember. A little more done.</p>
+      </div>
+      <p class="student">Rana Betül Karahan<br>Student ID: <strong id="student-id">72546</strong></p>
+    </header>
+
+    <div class="workspace">
+      <section class="panel form-panel" aria-labelledby="form-heading">
+        <p class="section-label">01 / PLAN</p>
+        <h2 id="form-heading">Add a task</h2>
+        <p class="hint">Start with one thing you need to do.</p>
+        <form id="task-form">
+          <label for="task-title">Title <span aria-hidden="true">*</span></label>
+          <input id="task-title" name="title" type="text" required placeholder="e.g. Finish the project README">
+          <label for="task-description">Description <span class="optional">optional</span></label>
+          <textarea id="task-description" name="description" rows="5" placeholder="Add a few details..."></textarea>
+          <div class="form-actions">
+            <button id="task-submit" type="submit">Add task <span aria-hidden="true">+</span></button>
+            <button id="cancel-edit" type="button" class="secondary" hidden>Cancel edit</button>
+          </div>
+        </form>
+        <p class="form-note">Tasks are saved online so they stay after refreshing.</p>
+      </section>
+
+      <section class="panel list-panel" aria-labelledby="list-heading">
+        <div class="list-header">
+          <div><p class="section-label">02 / DO</p><h2 id="list-heading">Your tasks</h2></div>
+          <span id="task-count" class="count">0 tasks</span>
+        </div>
+        <p id="status-message" role="status" aria-live="polite">Connecting to the database...</p>
+        <div id="task-list" aria-busy="true"></div>
+      </section>
+    </div>
+
+    <footer>
+      <p>One task at a time.</p>
+      <a id="contribution-link" href="contribution.html">Team contribution <span aria-hidden="true">↗</span></a>
+    </footer>
+  </main>
+</body>
+</html>
